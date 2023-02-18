@@ -955,9 +955,6 @@ const checkout = async (req, res) => {
         wishtListCount,
         paypalclientid,
       });
-      req.session.discountamount = 0;
-      req.session.discountedTotal = 0;
-      req.session.usedCode = null;
     } else {
       console.log(quantityCheck, "no stock products from cart to checkout");
       req.session.quantityCheck = quantityCheck;
@@ -1386,6 +1383,9 @@ const orderReview = async (req, res) => {
       discountamount,
     } = req.session;
 
+   console.log(discountedTotal,'discount Total .....')
+   console.log(discountamount,'discount amount .....')
+
     let productsPrice;
     let discount;
     let paymentDetails;
@@ -1423,6 +1423,7 @@ const orderReview = async (req, res) => {
     );
 
     if (discountedTotal && usedCode) {
+      console.log('have discount and used code......')
       productsPrice = discountedTotal;
       discount = discountamount;
       couponDetails = {
@@ -1430,6 +1431,7 @@ const orderReview = async (req, res) => {
         discount: discount,
       };
     } else {
+      console.log('no used code and discount...',discountedTotal,usedCode)
       productsPrice = cartItems.grandTotal;
       discount = 0;
       couponDetails = {
