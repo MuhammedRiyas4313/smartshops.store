@@ -1,0 +1,465 @@
+<link rel="icon" type="image/png" href="/imagescoza/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendorcoza/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/fontscoza/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/fontscoza/iconic/css/material-design-iconic-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/fontscoza/linearicons-v1.0.0/icon-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendorcoza/animate/animate.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendorcoza/css-hamburgers/hamburgers.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendorcoza/animsition/css/animsition.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendorcoza/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendorcoza/daterangepicker/daterangepicker.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendorcoza/slick/slick.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendorcoza/MagnificPopup/magnific-popup.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/vendorcoza/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/csscoza/util.css" />
+    <link rel="stylesheet" type="text/css" href="/csscoza/main.css" />
+<body class="animsition">
+	
+	<!-- Header -->
+	
+
+	<!-- Cart -->
+	
+
+
+	<!-- breadcrumb -->
+	<div class="container" style="margin-top: 150px;">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="" class="stext-109 cl8 hov-cl1 trans-04">
+				Home
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				Wishlist
+			</span>
+		</div>
+	</div>
+		
+
+	<!-- Shoping Cart -->
+	<form class="bg0 p-t-120 p-b-85" method="get" action="">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+					<div class="m-l-25 m-r--38 m-lr-0-xl">
+						<div class="wrap-table-shopping-cart">
+							<table class="table-shopping-cart">
+								<tr class="table_head">
+									<th class="column-1">Product</th>
+									<th class="column-2 pl-5">Name</th>
+									<th class="column-3">Price</th>
+									<th class="column-4 mr-5"></th>
+									<th class="column-5 ">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+								</tr>
+								{{#each userWishlist.items}}
+								<tr class="table_row" id="whislistitem{{this._id}}">
+									<td class="column-1">
+										<div class="how-itemcart1">
+											<img src="/images/uploads/{{this.product.image.[0]}}" alt="IMG">
+										</div>
+									</td>
+									<td class="column-2 pl-5">{{this.product.name}}</td>
+									<td class="column-3"  > {{this.product.price}} &nbsp&nbsp ₹<input type="number" id="productprice{{this.product._id}}" value="{{this.product.price}}" style="display: none;" ></td>
+									<td class="column-4"><div class="btn flex-c-m stext-101 cl0 size-90 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer m-tb-5"  >
+									<a onclick="addToCart('{{this.product._id}}')" >Add to cart</a>
+								</div>
+									</td>
+									<td class="column-5"><a  class="btn text-danger"  onclick=" deletewishlistItem('{{this._id}}')"  ><i class="fa fa-close"></i></a></td>
+								</tr>
+								{{/each}}
+							
+							</table>
+						</div>
+
+						{{#if userWishlist.count}}
+
+						{{else}}
+						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm d-flex justify-content-center" >
+							<div class="text-center text-danger">
+								NO ITEMS FOUND IN YOUR WISHLIST !
+							</div>
+						 </div>
+						{{/if}}
+            <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm d-flex justify-content-center" style="display:none">
+							<div class="text-center text-danger" style="display: none;" id="emptynotify">
+								NO ITEMS FOUND IN YOUR WISHLIST !
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<!-- Footer -->
+	<footer class="bg3 p-t-75 p-b-32">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Categories
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Women
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Men
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Shoes
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Watches
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Help
+					</h4>
+
+					<ul>
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Track Order
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Returns 
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								Shipping
+							</a>
+						</li>
+
+						<li class="p-b-10">
+							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+								FAQs
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						GET IN TOUCH
+					</h4>
+					<p class="stext-107 cl7 size-201">
+						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+					</p>
+
+					<div class="p-t-27">
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-facebook"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-instagram"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-pinterest-p"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-lg-3 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						Newsletter
+					</h4>
+
+					<form>
+						<div class="wrap-input1 w-full p-b-4">
+							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
+							<div class="focus-input1 trans-04"></div>
+						</div>
+
+						<div class="p-t-18">
+							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Subscribe
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="p-t-40">
+				<div class="flex-c-m flex-w p-b-18">
+					<a href="#" class="m-all-1">
+						<img src="/imagescoza/icons/icon-pay-01.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="/imagescoza/icons/icon-pay-02.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="/imagescoza/icons/icon-pay-03.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="/imagescoza/icons/icon-pay-04.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="/imagescoza/icons/icon-pay-05.png" alt="ICON-PAY">
+					</a>
+				</div>
+
+				<p class="stext-107 cl6 txt-center">
+					
+
+				</p>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
+	<script>
+    function addToCart(itemId){
+      const productPrice = document.getElementById(`productprice${itemId}`).value
+      console.log(itemId)
+      axios.post('/cart/'+itemId,{price:productPrice})
+      .then((res)=>{
+        if ( res.data.message == 'Added to cart' ){
+          Swal.fire(
+            'Success!',
+            'Product added to cart.',
+            'success'
+          ).then((res)=>{
+            location.href = '/cart'
+          })
+        }else{
+          Swal.fire(
+            'Oops!',
+            res.data.message,
+            'error'
+          ).then((res)=>{
+            event.preventDefault();
+          })
+        }
+        
+      })
+    }
+			
+		function deletewishlistItem(wishlistitem){
+		              Swal.fire({
+                      title: 'Are you sure?',
+                      text: "Remove item from wishlist!",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Yes, remove it!'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                          console.log(wishlistitem,'result is confirmed to delete')
+                          axios.delete('/wishlist?id='+wishlistitem)
+						        .then((data)=>{
+                              if(data.data.user == 'noSession' ){
+                                Swal.fire({
+                                  title: 'Oops',
+                                  text: "login please...",
+                                  icon: 'question',
+                                  showCancelButton: true,
+                                  confirmButtonColor: '#3085d6',
+                                  cancelButtonColor: '#d33',
+                                  confirmButtonText: 'Yes, login !'
+                                }).then((result) => {
+                                  if (result.isConfirmed) {
+                                    location.href = '/user-login'
+                                  }
+                                })
+                              }else if(data.data.success){
+                                  Swal.fire(
+                                    'Removed!',
+                                    'Item has been removed.',
+                                    'success'
+                                  ).then((reponse)=>{
+                                    if( !data.data.count ){
+                                      document.getElementById('emptynotify').style.display = 'block'
+                                    }
+                                    document.getElementById(`whislistitem${wishlistitem}`).style.display = 'none';
+                                  })
+                              }else if(data.data.updateerror){
+                                console.log('data.data.deleteerror')
+                                Swal.fire(
+                                  'Oops!',
+                                  'Somethins gone wrong !',
+                                  'error'
+                                )                                
+                              }else if(data.data.catcherror){
+                                console.log('data.data.catcherror')
+                                Swal.fire(
+                                  'Oops!',
+                                  'Somethins gone wrong !',
+                                  'error'
+                                )                                
+                              }   
+                          }).catch((err)=>{
+                            Swal.fire(
+                                  'Oops!',
+                                  'Somethins gone wrong !',
+                                  'error'
+                                )
+                          })
+                        }
+                     })
+        }
+		
+
+	</script>
+	<script src="/vendorcoza/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendorcoza/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendorcoza/bootstrap/js/popper.js"></script>
+    <script src="/vendorcoza/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendorcoza/select2/select2.min.js"></script>
+    <script>
+      $(".js-select2").each(function(){ $(this).select2({
+      minimumResultsForSearch: 20, dropdownParent:
+      $(this).next('.dropDownSelect2') }); })
+    </script>
+    <!--===============================================================================================-->
+    <script src="/vendorcoza/daterangepicker/moment.min.js"></script>
+    <script src="/vendorcoza/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendorcoza/slick/slick.min.js"></script>
+    <script src="/jscoza/slick-custom.js"></script>
+
+    <!--===============================================================================================-->
+    <script src="/vendorcoza/parallax100/parallax100.js"></script>
+    <script>
+      $('.parallax100').parallax100();
+    </script>
+    <!--===============================================================================================-->
+    <script
+      src="/vendorcoza/MagnificPopup/jquery.magnific-popup.min.js"
+    ></script>
+    <script>
+      $('.gallery-lb').each(function() { // the containers for all your
+      galleries $(this).magnificPopup({ delegate: 'a', // the selector for
+      gallery item type: 'image', gallery: { enabled:true }, mainClass:
+      'mfp-fade' }); });
+    </script>
+    <!--===============================================================================================-->
+    <script src="/vendorcoza/isotope/isotope.pkgd.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/vendorcoza/sweetalert/sweetalert.min.js"></script>
+    <script>
+      $('.js-addwish-b2').on('click', function(e){ e.preventDefault(); });
+      $('.js-addwish-b2').each(function(){ var nameProduct =
+      $(this).parent().parent().find('.js-name-b2').html(); $(this).on('click',
+      function(){ swal(nameProduct, "is added to wishlist !", "success");
+      $(this).addClass('js-addedwish-b2'); $(this).off('click'); }); });
+      $('.js-addwish-detail').each(function(){ var nameProduct =
+      $(this).parent().parent().parent().find('.js-name-detail').html();
+      $(this).on('click', function(){ swal(nameProduct, "is added to wishlist!", "success"); $(this).addClass('js-addedwish-detail');
+      $(this).off('click'); }); });
+      /*---------------------------------------------*/
+      $('.js-addcart-detail').each(function(){ var nameProduct =
+      $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+      $(this).on('click', function(){ swal(nameProduct, "is added to cart !",
+      "success"); }); });
+
+    </script>
+    <!--===============================================================================================-->
+    <script
+      src="/vendorcoza/perfect-scrollbar/perfect-scrollbar.min.js"
+    ></script>
+    <script>
+      $('.js-pscroll').each(function(){ $(this).css('position','relative');
+      $(this).css('overflow','hidden'); var ps = new PerfectScrollbar(this, {
+      wheelSpeed: 1, scrollingThreshold: 1000, wheelPropagation: false, });
+      $(window).on('resize', function(){ ps.update(); }) });
+    </script>
+    <!--===============================================================================================-->
+    <script src="/jscoza/main.js"></script>
+</body>
+</html>

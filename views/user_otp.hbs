@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Slide Navbar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/userlogin.css" />
+  </head>
+  <body>
+    <div class="main">
+      <input type="checkbox" id="chk" aria-hidden="true" />
+      <div class="signup">
+        <form action="/user/otp-confirm" method="post" onsubmit=" return valid()">
+          <label for="chk" aria-hidden="true">Verify OTP</label>
+                    <div
+                    class="alert alert-danger text-center"
+                    role="alert"
+                    id="categoryalertE"
+                    style="display: none;position:absolute;left:20%;top:15%;color: red;">
+                     Incorrect OTP try again !
+                  </div>
+          <input
+            type="password"
+            name="enteredotp"
+            placeholder="Enter OTP"
+            
+            id="otpinp"
+          />
+          <button id="sign-button" type="submit" >Submit</button>
+          <a href="/user/mobile-confirm" id="resendotp">Resend OTP</a>
+        </form>
+      </div>
+    </div>
+    <script>
+      if({{messageIO}}){
+                    document.getElementById('categoryalertE').style.display ='block';
+                    setTimeout(() => {
+                    document.getElementById('categoryalertE').style.display ='none' ;},3000);
+                     }
+
+      function valid(){
+       
+        const val = document.getElementById('otpinp').value
+         const conf = true;
+        if( val == "" || val == null ){
+          conf = false;
+          window.alert('Enter a valid OTP ');
+          return conf;
+        }else if(val.length < 6){
+          conf = false;
+          window.alert('OTP must be 6 digits');
+          return conf;
+        }else{
+          return conf;
+        }
+
+      }
+    </script>
+  </body>
+</html>

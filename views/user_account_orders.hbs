@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from smartshop.websitelayout.net/account-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Jan 2023 16:00:34 GMT -->
+<head>
+
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="Chitrakoot Web" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="Multipurpose eCommerce Template + Admin" />
+    <meta name="description" content="Smartshop - Multipurpose eCommerce Template + Admin" />
+
+    <!-- title  -->
+    <title>Smartshop - Multipurpose eCommerce Template + Admin</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="imgNA/logos/favicon.png" />
+    <link
+      rel="apple-touch-icon"
+      href="imgNA/logos/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="imgNA/logos/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="imgNA/logos/apple-touch-icon-114x114.png"
+    />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="imagescoza/icons/favicon.png" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendorcoza/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fontscoza/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fontscoza/iconic/css/material-design-iconic-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fontscoza/linearicons-v1.0.0/icon-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendorcoza/animate/animate.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendorcoza/css-hamburgers/hamburgers.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendorcoza/animsition/css/animsition.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendorcoza/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendorcoza/daterangepicker/daterangepicker.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendorcoza/slick/slick.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendorcoza/MagnificPopup/magnific-popup.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendorcoza/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="csscoza/util.css" />
+    <link rel="stylesheet" type="text/css" href="csscoza/main.css" />
+    <!--===============================================================================================-->
+
+    <!-- plugins -->
+    <link rel="stylesheet" href="cssNA/css/plugins.css" />
+
+    <!-- theme core css -->
+    <link href="cssNA/css/styles.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- PAGE LOADING
+    ================================================== -->
+    <div id="preloader"></div>
+
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    <div class="main-wrapper mp-pusher" id="mp-pusher">
+
+        <!-- HEADER
+        ================================================== -->
+
+        
+        <!-- CATEGORY MP-MENU
+        ================================================== -->
+        
+
+        <!-- PAGE TITLE
+        ================================================== -->
+        <section class="page-title-section bg-img cover-background" data-background="/imgNA/bg/page-title.jpg">
+            <div class="container">
+
+                <div class="title-info">
+                    <h1>My Orders</h1></div>
+                <div class="breadcrumbs-info">
+                    <ul class="ps-0">
+                        <li><a href="home-shop-1.html">Home</a></li>
+                        <li><a href="#">My Orders</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- ACCOUNT ORDERS
+        ================================================== -->
+        <section class="md">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <!-- left panel -->
+             <div class="col-lg-4 col-sm-9 mb-2-3 mb-lg-0">
+
+              <div class="account-pannel p-5" style="background-color: #fff;">
+
+                <div class="border border-secondary border-bottom-0">
+
+                  <div class="text-center">
+                    <div class="pb-3">
+                      <img
+                        class="img-fluid rounded-circle img-thumbnail"
+                        src="imgNA/avatar/t-3.jpg"
+                        alt="..."
+                      />
+                    </div>
+                    <h6 class="mb-0 display-28">{{logeduser.name}}</h6>
+                    <small>Joined {{logeduser.created}}</small>
+                    <div class="reward-points">
+                     <i class="fa-sharp fa-solid fa-star"></i>
+                      Points: 7386
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-group  border border-secondary border-top-0">
+                  <a
+                    class="list-group-items text-primary text-center"
+                    href="/user-profile"
+                  ><i class="fa-solid fa-user mr-2"></i></i>Profile</a>
+                  <a class="list-group-items text-primary text-center" href="/orders"><i class="fa-solid fa-briefcase mr-2"></i>Orders<span class="badge badge-pill"></span></a>
+                  <a class="list-group-items text-primary text-center" href="/wishlist"><i class="fa-solid fa-heart mr-2"></i>Wishlist<span class="badge badge-pill"></span></a>
+                  <a class="list-group-items text-primary text-center" href=""><i class="fa-solid fa-tags"></i>Addresses<span class="badge badge-pill"></span></a>
+                  <a class="list-group-items text-primary text-center" href=""><i class="fa-solid fa-tags"></i>My Tickets<span class="badge badge-pill"></span></a>
+                </div>
+
+              </div>
+
+            </div>
+                    <!-- end left panel -->
+
+                    <!-- right panel -->
+                    <div class="col-lg-8">
+
+                        <div class="common-block">
+
+                            <div class="inner-title">
+                                <h4 class="mb-0">My Orders</h4>
+                            </div>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Payment</th>
+                                        <th>Total</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                 {{#each orderList}}
+                                    <tr>
+                                        <th>
+                                            {{this.orderID}}
+                                        </th>
+                                        <td>
+                                           {{this.date}}
+                                        </td>
+                                        <td>
+                                          {{#equal this.status "Confirmed"}}
+                                          <span class=""><i class="fa-solid fa-circle-check text-info"></i></span> {{this.status}}
+                                          {{/equal}}
+                                          {{#equal this.status "Processing"}}
+                                          <span class=""><i class="fa-sharp fa-solid fa-hourglass-start text-info"></i></span> {{this.status}}
+                                          {{/equal}}
+                                          {{#equal this.status "Shipped"}}
+                                          <span class=""><i class="fa-solid fa-circle-check text-success"></i></span> {{this.status}}
+                                          {{/equal}}
+                                          {{#equal this.status "Delivered"}}
+                                          <span class=""><i class="fa-solid fa-circle-check text-success"></i></span> {{this.status}}
+                                          {{/equal}}   
+                                          {{#equal this.status "Canceled"}}
+                                          <span class=""><i class="fa-solid fa-circle-xmark text-danger"></i></span> {{this.status}}
+                                          {{/equal}}   
+                                          {{#equal this.status "Returned"}}
+                                          <span class=""><i class="fa-solid fa-arrow-rotate-left text-danger"></i></span> {{this.status}}
+                                          {{/equal}}   
+                                        </td>
+                                          {{#equal this.paymentMethod "cashondelivery"}}
+                                        <td><i class="fa-solid fa-sack-dollar text-primary"></i>&nbsp;&nbsp;COD</td>
+                                          {{/equal}}
+                                          {{#equal this.paymentMethod "onlinepayment"}}
+                                        <td><i class="fab fa-cc-mastercard me-1 text-primary"></i>&nbsp;&nbsp;Paypal</td>
+                                          {{/equal}}
+                                        <td>${{this.total}}</td>
+                                        <td><a href="/order-details?id={{this._id}}" class="text-info">View detils</a></td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                        <a class="butn-style2 mt-3" href="#"><span>Show All Orders</span></a>
+                        </div>
+
+                    </div>
+                    <!-- end right panel -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- FOOTER
+        ================================================== -->
+        <footer class="bg3 p-t-75 p-b-32">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-lg-3 p-b-50">
+              <h4 class="stext-301 cl0 p-b-30">
+                Categories
+              </h4>
+
+              <ul>
+                <li class="p-b-10">
+                  <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                    Women
+                  </a>
+                </li>
+
+                <li class="p-b-10">
+                  <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                    Men
+                  </a>
+                </li>
+
+                <li class="p-b-10">
+                  <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                    Shoes
+                  </a>
+                </li>
+
+                <li class="p-b-10">
+                  <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                    Watches
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+              <h4 class="stext-301 cl0 p-b-30">
+                Help
+              </h4>
+
+              <ul>
+                <li class="p-b-10">
+                  <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                    Track Order
+                  </a>
+                </li>
+
+                <li class="p-b-10">
+                  <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                    Returns
+                  </a>
+                </li>
+
+                <li class="p-b-10">
+                  <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                    Shipping
+                  </a>
+                </li>
+
+                <li class="p-b-10">
+                  <a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+                    FAQs
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+              <h4 class="stext-301 cl0 p-b-30">
+                GET IN TOUCH
+              </h4>
+
+              <p class="stext-107 cl7 size-201">
+                Any questions? Let us know in store at 8th floor, 379 Hudson St,
+                New York, NY 10018 or call us on (+1) 96 716 6879
+              </p>
+
+              <div class="p-t-27">
+                <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                  <i class="fa fa-facebook"></i>
+                </a>
+
+                <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                  <i class="fa fa-instagram"></i>
+                </a>
+
+                <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                  <i class="fa fa-pinterest-p"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+              <h4 class="stext-301 cl0 p-b-30">
+                Newsletter
+              </h4>
+
+              <form>
+                <div class="wrap-input1 w-full p-b-4">
+                  <input
+                    class="input1 bg-none plh1 stext-107 cl7"
+                    type="text"
+                    name="email"
+                    placeholder="email@example.com"
+                  />
+                  <div class="focus-input1 trans-04"></div>
+                </div>
+
+                <div class="p-t-18">
+                  <button
+                    class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="p-t-40">
+            <div class="flex-c-m flex-w p-b-18">
+              <a href="#" class="m-all-1">
+                <img src="/imagescoza/icons/icon-pay-01.png" alt="ICON-PAY" />
+              </a>
+
+              <a href="#" class="m-all-1">
+                <img src="/imagescoza/icons/icon-pay-02.png" alt="ICON-PAY" />
+              </a>
+
+              <a href="#" class="m-all-1">
+                <img src="/imagescoza/icons/icon-pay-03.png" alt="ICON-PAY" />
+              </a>
+
+              <a href="#" class="m-all-1">
+                <img src="/imagescoza/icons/icon-pay-04.png" alt="ICON-PAY" />
+              </a>
+
+              <a href="#" class="m-all-1">
+                <img src="/imagescoza/icons/icon-pay-05.png" alt="ICON-PAY" />
+              </a>
+            </div>
+
+            <p class="stext-107 cl6 txt-center">
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+              All rights reserved | Made with
+              <i class="fa fa-heart-o" aria-hidden="true"></i>
+              by
+              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              &amp; distributed by
+              <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+            </p>
+          </div>
+        </div>
+      </footer>  
+    </div>
+    
+    <!-- BUY TEMPLATE
+    ================================================== -->
+    {{!-- <div class="buy-theme alt-font d-none d-lg-inline-block"><a href="https://wrapbootstrap.com/theme/smartshop-multipurpose-ecommerce-template-WB0N7CT4D" target="_blank"><i class="fas fa-cart-plus"></i><span>Buy Template</span></a></div>
+
+    <div class="all-demo alt-font d-none d-lg-inline-block"><a href="https://www.chitrakootweb.com/contact.html" target="_blank"><i class="far fa-envelope"></i><span>Quick Question?</span></a></div> --}}
+    
+    <!-- SCROLL TO TOP
+    ================================================== -->
+    <a href="#" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+    
+    <!-- all js include start -->
+   <script src="https://kit.fontawesome.com/07fcc2468d.js" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="jsNA/jquery.min.js"></script>
+
+    <!-- popper js -->
+    <script src="jsNA/popper.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="jsNA/bootstrap.min.js"></script>
+
+    <!-- core.min.js -->
+    <script src="jsNA/core.min.js"></script>
+
+    <!-- custom scripts -->
+    <script src="jsNA/main.js"></script>
+
+    <!-- all js include end -->
+    <!--===============================================================================================-->
+    <script src="vendorcoza/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorcoza/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorcoza/bootstrap/js/popper.js"></script>
+    <script src="vendorcoza/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorcoza/select2/select2.min.js"></script>
+    <script>
+      $(".js-select2").each(function(){ $(this).select2({
+      minimumResultsForSearch: 20, dropdownParent:
+      $(this).next('.dropDownSelect2') }); })
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendorcoza/daterangepicker/moment.min.js"></script>
+    <script src="vendorcoza/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorcoza/slick/slick.min.js"></script>
+    <script src="jscoza/slick-custom.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendorcoza/parallax100/parallax100.js"></script>
+    <script>
+      $('.parallax100').parallax100();
+    </script>
+    <!--===============================================================================================-->
+    <script
+      src="vendorcoza/MagnificPopup/jquery.magnific-popup.min.js"
+    ></script>
+    <script>
+      $('.gallery-lb').each(function() { // the containers for all your
+      galleries $(this).magnificPopup({ delegate: 'a', // the selector for
+      gallery item type: 'image', gallery: { enabled:true }, mainClass:
+      'mfp-fade' }); });
+    </script>
+    <!--===============================================================================================-->
+    <script src="vendorcoza/isotope/isotope.pkgd.min.js"></script>
+    <!--===============================================================================================-->
+    {{!-- <script src="vendorcoza/sweetalert/sweetalert.min.js"></script> --}}
+    <script>
+      $('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
+      e.preventDefault(); }); $('.js-addwish-b2').each(function(){ var
+      nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+      $(this).on('click', function(){ swal(nameProduct, "is added to wishlist!", "success"); $(this).addClass('js-addedwish-b2'); $(this).off('click');
+      }); }); $('.js-addwish-detail').each(function(){ var nameProduct =
+      $(this).parent().parent().parent().find('.js-name-detail').html();
+      $(this).on('click', function(){ swal(nameProduct, "is added to wishlist!", "success"); $(this).addClass('js-addedwish-detail');
+      $(this).off('click'); }); });
+      /*---------------------------------------------*/
+      $('.js-addcart-detail').each(function(){ var nameProduct =
+      $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+      $(this).on('click', function(){ swal(nameProduct, "is added to cart !",
+      "success"); }); });
+
+    </script>
+    <!--===============================================================================================-->
+    <script
+      src="vendorcoza/perfect-scrollbar/perfect-scrollbar.min.js"
+    ></script>
+    <script>
+      $('.js-pscroll').each(function(){ $(this).css('position','relative');
+      $(this).css('overflow','hidden'); var ps = new PerfectScrollbar(this, {
+      wheelSpeed: 1, scrollingThreshold: 1000, wheelPropagation: false, });
+      $(window).on('resize', function(){ ps.update(); }) });
+    </script>
+    <!--===============================================================================================-->
+    <script src="jscoza/main.js"></script>
+	
+	<!-- all js include end -->
+
+</body>
+
+
+<!-- Mirrored from smartshop.websitelayout.net/account-orders.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Jan 2023 16:00:34 GMT -->
+</html>

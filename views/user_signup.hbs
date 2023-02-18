@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Slide Navbar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/userlogin.css" />
+  </head>
+  <body>
+    <div class="main">
+      <input type="checkbox" id="chk" aria-hidden="true" />
+      <div class="signup">
+        <form action="/user/signup-confirm" method="post">
+          <label id="labelsignup" for="chk" aria-hidden="true">Sign Up</label>
+
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter name"
+            required=""
+          />
+          <input type="email" name="useremail" placeholder="Email" />
+          <input
+            type="password"
+            name="userpassword"
+            placeholder="Password"
+            required=""
+          />
+          <input
+            type="password"
+            name="userconfirmpassword"
+            placeholder="Confirm Password"
+            required=""
+          />
+          <button id="sign-button">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

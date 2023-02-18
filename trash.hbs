@@ -1,0 +1,582 @@
+//new user mobile enter field
+
+
+<div class="modal-header d-flex justify-content-center" style="background-color: #111340;">
+            <h5 class="modal-title text-white" id="exampleModalLongTitle">Verify mobile</h5>
+                 <div class="d-flex justify-content-end" style="background-color: #111340;">
+                      <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    </div>
+              <div class="modal-body pt-5" style="padding-left:3rem;padding-right:3rem;padding-bottom:3rem;background-color: #c2c2c26e;">
+              <form id="verifyMobile">
+          <!-- Email input -->
+              <div class="form-outline mb-2">
+                <h6 class="form-label pt-2 pb-1" for="form2Example1" style="font-size: 1.5rem !important;">Enter mobile</h6>
+                <input type="number" id="form2Example1" class="form-control"  name="newusermobile" placeholder="Enter mobile number"/> 
+                <h5 class="form-label text-danger pt-2" style="font-size: 1.5rem !important;" for="form2Example1" id="validationmobile">&nbsp;&nbsp;&nbsp;</h5>
+              </div>
+              <div class="form-group mt-4 mb-2">
+                   <button type="submit" class="btn btn-block text-white mt-2 mb-4" style="border-radius:2rem ;font-weight: 700;letter-spacing:3px;line-height: 2rem;background-color: #111340; ">  Send OTP  </button>
+              </div> 
+          <!-- Register buttons -->
+            </form>
+              </div>
+
+// axios and form mobile
+
+
+<script>
+      const form = document.getElementById('verifyMobile')
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
+    console.log(data,'mobile number for verify otp')
+    axios.post('/user-otp',data)})
+</script>
+
+
+
+
+//otp entering  field
+
+
+
+<div class="modal-header d-flex justify-content-center" style="background-color: #111340;">
+            <h5 class="modal-title text-white" id="exampleModalLongTitle">Verify OTP</h5>
+                 <div class="d-flex justify-content-end" style="background-color: #111340;">
+                      <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    </div>
+              <div class="modal-body pt-5" style="padding-left:3rem;padding-right:3rem;padding-bottom:3rem;background-color: #c2c2c26e;">
+              <form id="verifyOTP">
+          <!-- Email input -->
+              <div class="form-outline mb-2">
+                <h6 class="form-label pt-2 pb-1" for="form2Example1" style="font-size: 1.5rem !important;">Enter OTP</h6>
+                <input type="number" id="form2Example1" class="form-control"  name="enteredotp" placeholder="Enter OTP"/> 
+                <h5 class="form-label text-danger pt-2" for="form2Example1" id="validationOTP">&nbsp;&nbsp;&nbsp;</h5>
+              </div>
+              <div class=" d-flex justify-content-center text-danger" id="otptimer">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </div>
+              <div class="form-group mt-4 mb-2" id="buttonOTP">
+                   <button type="submit" class="btn btn-block text-white mt-2 mb-4" style="border-radius:2rem ;font-weight: 700;letter-spacing:3px;line-height: 2rem;background-color: #111340; ">  Submit  </button>
+              </div> 
+              <div class="form-group d-flex justify-content-center" style="display:none !important;" id="buttonresend">
+                   <button type="button" class="btn text-white mt-2 mb-4" style="border-radius:2rem ;font-weight: 400;letter-spacing:3px;line-height: 2rem;background-color: #be0020; " id="ResendOTPbutton">  Resend OTP   </button>
+              </div>
+              
+          <!-- Register buttons -->
+            </form>
+              </div>
+
+axios otp confirm
+
+
+<script>
+    let OTPvalidity = false;
+
+              
+
+
+                const formOTP = document.getElementById('verifyOTP')
+                formOTP.addEventListener('submit',(e)=>{
+                  e.preventDefault();
+                    if(OTPvalidity){
+                      console.log('OTP valid...')
+                           const formDataOTP = new FormData(formOTP)
+                           const dataOTP = Object.fromEntries(formDataOTP)
+                           console.log(dataOTP,'data otp from the form')
+                            axios.post('/user/otp-confirm',dataOTP)
+                            
+                            
+</script>
+
+
+
+
+//new user signup form 
+
+<div class="modal-header d-flex justify-content-center" style="background-color: #111340;">
+                                <h5 class="modal-title text-white" id="exampleModalLongTitle">Signup</h5>
+                                <div class="d-flex justify-content-end" style="background-color: #111340;">
+                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" >
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              </div>
+                              <div class="modal-body" style="padding-left:3rem;padding-right:3rem;padding-bottom:3rem;background-color: #c2c2c26e;">
+                                <div class="d-flex justify-content-start">
+                                  <h5 class="form-label text-danger mt-2 mb-3" for="form2Example1" id="validationsignup">&nbsp;&nbsp;&nbsp;</h5>
+                                </div>
+                              <div class="row mt-2">
+                                      <div class="col-12">
+                                        <form id="signupconfirm" class="tm-login-form" >
+                                          <div class="form-group">
+                                            <label for="username" class="">Enter name</label>
+                                            <input
+                                              name="username"
+                                              type="text"
+                                              class="form-control"
+                                              placeholder="Enter name"
+                                              id="username"
+                                            
+                                            />
+                                          </div>
+                                          <div class="form-group mt-3">
+                                            <label for="password">Enter email</label>
+                                            <input
+                                              name="useremail"
+                                              type="email"
+                                              class="form-control"
+                                              placeholder="Enter email"
+                                            />
+                                          </div>
+                                          <div class="form-group mt-3">
+                                            <label for="password">Password</label>
+                                            <input
+                                              name="userpassword"
+                                              type="password"
+                                              class="form-control"
+                                              placeholder="Password"
+                                            />
+                                          </div>
+                                          <div class="form-group mt-3">
+                                            <label for="password">Confirm password</label>
+                                            <input
+                                              name="userconfirmpassword"
+                                              type="password"
+                                              class="form-control"
+                                              placeholder="Confirm password"
+                                            />
+                                          </div>
+                                          <div class="form-group mt-4 mb-2">
+                                            <button
+                                              type="submit"
+                                              class="btn btn-block text-white mt-2 mb-4"
+                                              style="border-radius:2rem ;font-weight: 700;letter-spacing:3px;line-height: 2rem;background-color: #111340; "
+                                              
+                                            >
+                                              Signup
+                                            </button>
+                                          </div>   
+                                        </form>
+                                      </div>
+                                    </div>
+
+/// signup confirm axios
+
+<script>
+    const formsignup = document.getElementById('signupconfirm')
+                                    formsignup.addEventListener('submit',(e)=>{
+                                      e.preventDefault();
+                                        const formsignupData = new FormData(formsignup)
+                                        const datasignup = Object.fromEntries(formsignupData)
+                                        console.log(datasignup,'data otp from the form')
+                                        axios.post('/user/signup-confirm',datasignup)
+</script>
+
+
+//// timer function ////////
+
+<script>
+    function timer(){
+
+                   OTPvalidity = true;
+                    console.log('timer is calling')
+                    let countdown = 10; // OTP validity time in seconds
+                    let timerId = setInterval(function() {
+                      countdown--;
+                      document.getElementById('otptimer').innerHTML = `Time :  ${countdown}  seconds`
+                      if (countdown === 0) {
+                        clearInterval(timerId);
+                        document.getElementById('otptimer').innerHTML = "Time's up! OTP expired."
+                        document.getElementById('buttonOTP').style.display = 'none' 
+                        document.getElementById('buttonresend').style.display = 'block' 
+                        OTPvalidity = false
+                      }
+                  }, 1000);
+
+              }
+</script>
+
+
+
+
+
+old otpSEtup 
+
+
+
+const form = document.getElementById('verifyMobile')
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
+    console.log(data,'mobile number for verify otp')
+    axios.post('/user-otp',data).then((res)=>{
+
+      if(res.data.message == "success" ){
+
+        console.log(res.data,'res after mobile validation ')
+
+        document.getElementById('modalToverifyUser').innerHTML = `
+                <div class="modal-header d-flex justify-content-center" style="background-color: #111340;">
+            <h5 class="modal-title text-white" id="exampleModalLongTitle">Verify OTP</h5>
+                 <div class="d-flex justify-content-end" style="background-color: #111340;">
+                      <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    </div>
+              <div class="modal-body pt-5" style="padding-left:3rem;padding-right:3rem;padding-bottom:3rem;background-color: #c2c2c26e;">
+              <form id="verifyOTP">
+          <!-- Email input -->
+              <div class="form-outline mb-2">
+                <h6 class="form-label pt-2 pb-1" for="form2Example1" style="font-size: 1.5rem !important;">Enter OTP</h6>
+                <input type="number" id="form2Example1" class="form-control"  name="enteredotp" placeholder="Enter OTP"/> 
+                <h5 class="form-label text-danger pt-2" for="form2Example1" id="validationOTP">&nbsp;&nbsp;&nbsp;</h5>
+              </div>
+              <div class=" d-flex justify-content-center text-danger" id="otptimer">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </div>
+              <div class="form-group mt-4 mb-2" id="buttonOTP">
+                   <button type="submit" class="btn btn-block text-white mt-2 mb-4" style="border-radius:2rem ;font-weight: 700;letter-spacing:3px;line-height: 2rem;background-color: #111340; ">  Submit  </button>
+              </div> 
+              <div class="form-group d-flex justify-content-center" style="display:none !important;" id="buttonresend">
+                   <button type="button" class="btn text-white mt-2 mb-4" style="border-radius:2rem ;font-weight: 400;letter-spacing:3px;line-height: 2rem;background-color: #be0020; " id="ResendOTPbutton">  Resend OTP   </button>
+              </div>
+              
+          <!-- Register buttons -->
+            </form>
+              </div>`
+
+              timer();
+
+              let OTPvalidity = false;
+
+              
+
+
+                const formOTP = document.getElementById('verifyOTP')
+                formOTP.addEventListener('submit',(e)=>{
+                  e.preventDefault();
+                    if(OTPvalidity){
+                      console.log('OTP valid...')
+                           const formDataOTP = new FormData(formOTP)
+                           const dataOTP = Object.fromEntries(formDataOTP)
+                           console.log(dataOTP,'data otp from the form')
+                            axios.post('/user/otp-confirm',dataOTP).then((resp)=>{
+
+                              console.log(resp.data,'data from the otp validation ')
+
+                              if(resp.data.message == "success"){
+
+                                  document.getElementById('modalToverifyUser').innerHTML =`<div class="modal-header d-flex justify-content-center" style="background-color: #111340;">
+                                <h5 class="modal-title text-white" id="exampleModalLongTitle">Signup</h5>
+                                <div class="d-flex justify-content-end" style="background-color: #111340;">
+                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" >
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              </div>
+                              <div class="modal-body" style="padding-left:3rem;padding-right:3rem;padding-bottom:3rem;background-color: #c2c2c26e;">
+                                <div class="d-flex justify-content-start">
+                                  <h5 class="form-label text-danger mt-2 mb-3" for="form2Example1" id="validationsignup">&nbsp;&nbsp;&nbsp;</h5>
+                                </div>
+                              <div class="row mt-2">
+                                      <div class="col-12">
+                                        <form id="signupconfirm" class="tm-login-form" >
+                                          <div class="form-group">
+                                            <label for="username" class="">Enter name</label>
+                                            <input
+                                              name="username"
+                                              type="text"
+                                              class="form-control"
+                                              placeholder="Enter name"
+                                              id="username"
+                                            
+                                            />
+                                          </div>
+                                          <div class="form-group mt-3">
+                                            <label for="password">Enter email</label>
+                                            <input
+                                              name="useremail"
+                                              type="email"
+                                              class="form-control"
+                                              placeholder="Enter email"
+                                            />
+                                          </div>
+                                          <div class="form-group mt-3">
+                                            <label for="password">Password</label>
+                                            <input
+                                              name="userpassword"
+                                              type="password"
+                                              class="form-control"
+                                              placeholder="Password"
+                                            />
+                                          </div>
+                                          <div class="form-group mt-3">
+                                            <label for="password">Confirm password</label>
+                                            <input
+                                              name="userconfirmpassword"
+                                              type="password"
+                                              class="form-control"
+                                              placeholder="Confirm password"
+                                            />
+                                          </div>
+                                          <div class="form-group mt-4 mb-2">
+                                            <button
+                                              type="submit"
+                                              class="btn btn-block text-white mt-2 mb-4"
+                                              style="border-radius:2rem ;font-weight: 700;letter-spacing:3px;line-height: 2rem;background-color: #111340; "
+                                              
+                                            >
+                                              Signup
+                                            </button>
+                                          </div>   
+                                        </form>
+                                      </div>
+                                    </div>`
+
+                                  const formsignup = document.getElementById('signupconfirm')
+                                    formsignup.addEventListener('submit',(e)=>{
+                                      e.preventDefault();
+                                        const formsignupData = new FormData(formsignup)
+                                        const datasignup = Object.fromEntries(formsignupData)
+                                        console.log(datasignup,'data otp from the form')
+                                        axios.post('/user/signup-confirm',datasignup).then((respo)=>{
+
+                                          console.log(respo.data,'res from the signup confim')
+
+                                          if(respo.data.message == "success"){
+                                            Swal.fire({
+                                              position: 'top-end',
+                                              icon: 'success',
+                                              title: 'Account has been created',
+                                              showConfirmButton: false,
+                                              timer: 1500
+                                            }).then((repon)=>{
+                                              $('.fade').modal('hide');
+                                            })
+                                            
+                                          }else{
+                                              document.getElementById('validationsignup').innerHTML = respo.data.message
+                                              setTimeout(() => {
+                                              document.getElementById('validationsignup').innerHTML ='&nbsp;&nbsp;&nbsp;' ;},3000);
+                                          }
+
+                                        })
+                                      })
+
+                              }else{
+                                document.getElementById('validationOTP').innerHTML = resp.data.message
+                                setTimeout(() => {
+                                document.getElementById('validationOTP').innerHTML ='&nbsp;&nbsp;&nbsp;' ;},3000);
+                              }
+                            })
+                    }else{
+                      console.log('OTP expired......')
+
+
+
+                      document.getElementById('ResendOTPbutton').addEventListener('click',(e)=>{
+                        e.preventDefault();
+                        axios.post('/user-otp',data).then((res)=>{
+                          if(res.data.message == "success" ){
+                            
+                            document.getElementById('buttonOTP').style.display = 'block' 
+                            document.getElementById('buttonresend').style.display = 'none'
+                            
+                                   timer();
+
+                                    let OTPvalidity = false;
+
+                                    function timer(){
+
+                                        OTPvalidity = true;
+                                          console.log('timer is calling')
+                                          let countdown = 10; // OTP validity time in seconds
+                                          let timerId = setInterval(function() {
+                                            countdown--;
+                                            document.getElementById('otptimer').innerHTML = `Time :  ${countdown}  seconds`
+                                            if (countdown === 0) {
+                                              clearInterval(timerId);
+                                              document.getElementById('otptimer').innerHTML = "Time's up! OTP expired."
+                                              document.getElementById('buttonOTP').style.display = 'none' 
+                                              document.getElementById('buttonresend').style.display = 'block' 
+                                              OTPvalidity = false
+                                            }
+                                        }, 1000);
+
+                                    }
+
+                             if(OTPvalidity){
+                                    console.log(' Resend OTP valid...')
+                                  const formDataOTP = new FormData(formOTP)
+                                  const dataOTP = Object.fromEntries(formDataOTP)
+                                  console.log(dataOTP,'data otp from the form')
+                                    axios.post('/user/otp-confirm',dataOTP).then((resp)=>{
+
+                                      console.log(resp.data,'data from the otp validation ')
+
+                                      if(resp.data.message == "success"){
+
+                                              document.getElementById('modalToverifyUser').innerHTML =`<div class="modal-header d-flex justify-content-center" style="background-color: #111340;">
+                                            <h5 class="modal-title text-white" id="exampleModalLongTitle">Signup</h5>
+                                            <div class="d-flex justify-content-end" style="background-color: #111340;">
+                                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" >
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          </div>
+                                          <div class="modal-body" style="padding-left:3rem;padding-right:3rem;padding-bottom:3rem;background-color: #c2c2c26e;">
+                                            <div class="d-flex justify-content-start">
+                                              <h5 class="form-label text-danger mt-2 mb-3" for="form2Example1" id="validationsignup">&nbsp;&nbsp;&nbsp;</h5>
+                                            </div>
+                                          <div class="row mt-2">
+                                                  <div class="col-12">
+                                                <form id="signupconfirm" class="tm-login-form" >
+                                                  <div class="form-group">
+                                                    <label for="username" class="">Enter name</label>
+                                                    <input
+                                                      name="username"
+                                                      type="text"
+                                                      class="form-control"
+                                                      placeholder="Enter name"
+                                                      id="username"
+                                                    
+                                                    />
+                                                  </div>
+                                                  <div class="form-group mt-3">
+                                                    <label for="password">Enter email</label>
+                                                    <input
+                                                      name="useremail"
+                                                      type="email"
+                                                      class="form-control"
+                                                      placeholder="Enter email"
+                                                    />
+                                                  </div>
+                                                  <div class="form-group mt-3">
+                                                    <label for="password">Password</label>
+                                                    <input
+                                                      name="userpassword"
+                                                      type="password"
+                                                      class="form-control"
+                                                      placeholder="Password"
+                                                    />
+                                                  </div>
+                                                  <div class="form-group mt-3">
+                                                    <label for="password">Confirm password</label>
+                                                    <input
+                                                      name="userconfirmpassword"
+                                                      type="password"
+                                                      class="form-control"
+                                                      placeholder="Confirm password"
+                                                    />
+                                                  </div>
+                                                  <div class="form-group mt-4 mb-2">
+                                                    <button
+                                                      type="submit"
+                                                      class="btn btn-block text-white mt-2 mb-4"
+                                                      style="border-radius:2rem ;font-weight: 700;letter-spacing:3px;line-height: 2rem;background-color: #111340; "
+                                                      
+                                                    >
+                                                      Signup
+                                                    </button>
+                                                  </div>   
+                                                </form>
+                                              </div>
+                                            </div>`
+
+                                          const formsignup = document.getElementById('signupconfirm')
+                                            formsignup.addEventListener('submit',(e)=>{
+                                              e.preventDefault();
+                                                const formsignupData = new FormData(formsignup)
+                                                const datasignup = Object.fromEntries(formsignupData)
+                                                console.log(datasignup,'data otp from the form')
+                                                axios.post('/user/signup-confirm',datasignup).then((respo)=>{
+
+                                                  console.log(respo.data,'res from the signup confim')
+
+                                                  if(respo.data.message == "success"){
+                                                    Swal.fire({
+                                                      position: 'top-end',
+                                                      icon: 'success',
+                                                      title: 'Account has been created',
+                                                      showConfirmButton: false,
+                                                      timer: 1500
+                                                    }).then((repon)=>{
+                                                      $('.fade').modal('hide');
+                                                    })
+                                                    
+                                                  }else{
+                                                      document.getElementById('validationsignup').innerHTML = respo.data.message
+                                                      setTimeout(() => {
+                                                      document.getElementById('validationsignup').innerHTML ='&nbsp;&nbsp;&nbsp;' ;},3000);
+                                                  }
+
+                                                })
+                                              })
+
+                                      }else{
+                                        document.getElementById('validationOTP').innerHTML = resp.data.message
+                                        setTimeout(() => {
+                                        document.getElementById('validationOTP').innerHTML ='&nbsp;&nbsp;&nbsp;' ;},3000);
+                                      }
+                                    })
+                            }else{
+                              document.getElementById('validationOTP').innerHTML = "Try again later!"
+                              setTimeout(() => {
+                                document.getElementById('modalToverifyUser').innerHTML =`
+                                              <div class="modal-header d-flex justify-content-center" style="background-color: #111340;">
+                                                <h5 class="modal-title text-white" id="exampleModalLongTitle">Verify mobile</h5>
+                                                    <div class="d-flex justify-content-end" style="background-color: #111340;">
+                                                          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" >
+                                                            <span aria-hidden="true">&times;</span>
+                                                          </button>
+                                                        </div>
+                                                        </div>
+                                                  <div class="modal-body pt-5" style="padding-left:3rem;padding-right:3rem;padding-bottom:3rem;background-color: #c2c2c26e;">
+                                                  <form id="verifyMobile">
+                                              <!-- Email input -->
+                                                  <div class="form-outline mb-2">
+                                                    <h6 class="form-label pt-2 pb-1" for="form2Example1" style="font-size: 1.5rem !important;">Enter mobile</h6>
+                                                    <input type="number" id="form2Example1" class="form-control"  name="newusermobile" placeholder="Enter mobile number"/> 
+                                                    <h5 class="form-label text-danger pt-2" style="font-size: 1.5rem !important;" for="form2Example1" id="validationmobile">&nbsp;&nbsp;&nbsp;</h5>
+                                                  </div>
+                                                  <div class="form-group mt-4 mb-2">
+                                                      <button type="submit" class="btn btn-block text-white mt-2 mb-4" style="border-radius:2rem ;font-weight: 700;letter-spacing:3px;line-height: 2rem;background-color: #111340; ">  Send OTP  </button>
+                                                  </div> 
+                                              <!-- Register buttons -->
+                                                </form>
+                                                  </div>`
+                              document.getElementById('validationOTP').innerHTML ='&nbsp;&nbsp;&nbsp;' ;},3000);
+                            }
+                             
+                             
+                          }
+
+                        })
+                      })
+                      
+                    }
+                })
+                
+              
+                
+
+      }else{
+        document.getElementById('validationmobile').innerHTML = res.data.message
+        setTimeout(() => {
+        document.getElementById('validationmobile').innerHTML ='&nbsp;&nbsp;&nbsp;' ;},3000); 
+      }
+    })
+  })
+
