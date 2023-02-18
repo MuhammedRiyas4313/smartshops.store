@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const URL = process.env.URL;
+const RIYA = process.env.URL;
+
+console.log(RIYA,'url from the db...')
 
 mongoose.set("strictQuery", false);
-mongoose
-  .connect(URL, { useNewUrlParser: true })
+mongoose.connect(RIYA,{ useNewUrlParser: true })
   .then(() => {
     console.log("connected");
   })
