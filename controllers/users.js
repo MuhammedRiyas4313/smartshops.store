@@ -905,7 +905,7 @@ const checkout = async (req, res) => {
       wishtListCount,
       couponApplied,
     } = req.session;
-    console.log(couponApplied,discountedTotal)
+    console.log(couponApplied,discountedTotal,'FROM THE CHECKOUT.......')
     const cartItems = await Cart.aggregate([
       { $match: { user: ObjectId(logeduser._id) } },
       { $unwind: "$items" },
@@ -1383,8 +1383,8 @@ const orderReview = async (req, res) => {
       discountamount,
     } = req.session;
 
-   console.log(discountedTotal,'discount Total .....')
-   console.log(discountamount,'discount amount .....')
+   console.log(discountedTotal,'discount Total .....FROM ORDER REVIEW')
+   console.log(discountamount,'discount amount .....FROM ORDER REVIEW...')
 
     let productsPrice;
     let discount;
